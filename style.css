@@ -1,0 +1,187 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+body {
+  /* background-image: url(https://images.unsplash.com/photo-1682685797208-c741d58c2eff?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D); */
+  background-image: url(https://images.unsplash.com/photo-1612375689547-b5351e63050b?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav {
+  position: absolute;
+  top: 0;
+  width: 90%;
+  display: flex;
+  justify-content: space-around;
+  align-items: end;
+  font-size: 20px;
+  padding: 20px;
+}
+
+nav span {
+  z-index: 1;
+  color: black;
+  text-decoration: none;
+  position: relative;
+}
+
+@keyframes BeforAnimation {
+  0% {
+    width: 0%;
+    transform: translateX(-50%);
+  }
+
+  100% {
+    width: 100%;
+    transform: translateX(0%);
+  }
+}
+
+nav span a::before {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  right: 0px;
+  background-color: black;
+  width: 100%;
+  height: 2.5px;
+  animation: BeforAnimation 0.5s;
+}
+
+nav span a:hover::before {
+  display: unset;
+}
+
+.form-box {
+  position: relative;
+  width: 400px;
+  height: 450px;
+  backdrop-filter: blur(40px);
+  color: white;
+  border: 2px solid white;
+  border-radius: 16px;
+  transition: transform 0.6s ease, height 0.2s ease-in-out,
+    opacity 0.5s ease-in-out;
+  overflow: hidden;
+}
+
+.close-icon {
+  position: absolute;
+  right: 0px;
+  background-color: rgba(2, 172, 117, 0.45);
+  border-bottom-left-radius: 20px;
+  border-top-right-radius: 15px;
+  font-size: 40px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.form-box form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transition: all 0.5s ease;
+}
+
+.register-form {
+  transform: translateX(-100%);
+}
+
+.input-box {
+  width: 80%;
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  border-bottom: 2px solid white;
+  align-items: center;
+  margin: 40px 0px;
+}
+
+.input-box div {
+  display: flex;
+  align-items: center;
+}
+
+.input-box div label {
+  transition: 0.4s;
+  padding-left: 10px;
+  font-size: 17px;
+}
+
+.register-form .input-box {
+  margin: 30px 0px;
+}
+
+.input-box input {
+  width: 100%;
+  position: absolute;
+  color: white;
+  font-size: 18px;
+  border: none;
+  background: none;
+  padding-left: 30px;
+  height: 100%;
+}
+
+.input-box div input:focus ~ label,
+.input-box div input:valid ~ label {
+  transform: translateY(-25px);
+}
+
+.input-box ion-icon {
+  font-size: 25px;
+}
+
+.check-box {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+}
+
+.submit-btn {
+  width: 80%;
+  height: 35px;
+  cursor: pointer;
+  border-radius: 20px;
+  margin: 20px 0px;
+  border: none;
+  font-size: 20px;
+}
+
+.form-box h5,
+.check-box label,
+.check-box input {
+  cursor: pointer;
+}
+
+.change-form {
+  height: 500px;
+}
+
+.change-form .login-form {
+  transform: translateX(100%);
+}
+
+.change-form .register-form {
+  transform: translateX(0%);
+}
+
+.close-form {
+  opacity: 0;
+  transform: translateY(-15%);
+}
